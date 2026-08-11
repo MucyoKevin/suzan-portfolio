@@ -1,7 +1,22 @@
+import CountUp from "./CountUp";
 import ParallaxFrame from "./ParallaxFrame";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
-import { about, profile } from "@/content/portfolio";
+import {
+  about,
+  caseStudies,
+  creativeHighlights,
+  events,
+  expertise,
+  profile,
+} from "@/content/portfolio";
+
+const stats = [
+  { to: caseStudies.length, label: "Featured case studies" },
+  { to: expertise.length, label: "Core specialties" },
+  { to: creativeHighlights.length, label: "Content formats" },
+  { to: events.examples.length, label: "Event capabilities" },
+];
 
 export default function About() {
   return (
@@ -16,6 +31,7 @@ export default function About() {
               src="/pic_2.jpeg"
               alt={`${profile.name} smiling to camera`}
               strength={28}
+              tilt
               sizes="(min-width: 768px) 32vw, 80vw"
               className="aspect-square w-full rounded-full"
             />
@@ -33,6 +49,23 @@ export default function About() {
                 </Reveal>
               ))}
             </div>
+
+            <Reveal delay={420}>
+              <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-sand-deep pt-10 sm:grid-cols-4">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <CountUp
+                      to={stat.to}
+                      className="text-3xl leading-none font-light text-terracotta md:text-4xl"
+                    />
+                    <p className="u-eyebrow mt-2 text-ink-soft">
+                      <span className="sr-only">{stat.to} </span>
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

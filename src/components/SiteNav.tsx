@@ -7,14 +7,23 @@ const sectionIds = navLinks.map((link) => link.href.slice(1));
 
 export default function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [active, setActive] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   // Track which section owns the upper third of the viewport.
@@ -61,6 +70,12 @@ export default function SiteNav() {
           : "border-b border-transparent"
       }`}
     >
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-terracotta transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+      />
+
       <nav
         aria-label="Primary"
         className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 sm:px-10"

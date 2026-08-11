@@ -19,9 +19,11 @@ export default function Events() {
               as="li"
               key={example.title}
               delay={index * 90}
-              className="border-t-2 border-terracotta/60 pt-6"
+              className="group border-t-2 border-terracotta/60 pt-6 transition-all duration-300 hover:-translate-y-1 hover:border-terracotta"
             >
-              <h3 className="u-h3">{example.title}</h3>
+              <h3 className="u-h3 transition-colors duration-300 group-hover:text-terracotta-deep">
+                {example.title}
+              </h3>
               <p className="u-body mt-3 text-base">{example.description}</p>
             </Reveal>
           ))}

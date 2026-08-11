@@ -44,6 +44,16 @@ export default function Contact() {
                   {contact.linkedinLabel}
                 </a>
               </li>
+              <li>
+                <a
+                  href={contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={detailLink}
+                >
+                  {contact.instagramLabel}
+                </a>
+              </li>
             </ul>
           </Reveal>
 

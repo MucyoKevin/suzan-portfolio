@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import type { MouseEvent } from "react";
 
 type ParallaxFrameProps = {
   src: string;
@@ -14,6 +15,8 @@ type ParallaxFrameProps = {
   className?: string;
   /** Extra classes on the frame's inner wrapper, e.g. the hero sweep. */
   overlayClassName?: string;
+  /** Adds a subtle mouse-driven 3D tilt on top of the scroll parallax. */
+  tilt?: boolean;
 };
 
 /**
@@ -29,6 +32,7 @@ export default function ParallaxFrame({
   sizes,
   className = "",
   overlayClassName = "",
+  tilt = false,
 }: ParallaxFrameProps) {
   const frameRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -70,10 +74,28 @@ export default function ParallaxFrame({
     };
   }, [strength]);
 
+  const handleTiltMove = (event: MouseEvent<HTMLDivElement>) => {
+    const frame = frameRef.current;
+    if (!tilt || !frame) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const rect = frame.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+    frame.style.transform = `perspective(900px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg)`;
+  };
+
+  const handleTiltLeave = () => {
+    const frame = frameRef.current;
+    if (tilt && frame) frame.style.transform = "";
+  };
+
   return (
     <div
       ref={frameRef}
-      className={`relative overflow-hidden bg-sand ${overlayClassName} ${className}`}
+      onMouseMove={tilt ? handleTiltMove : undefined}
+      onMouseLeave={tilt ? handleTiltLeave : undefined}
+      className={`relative overflow-hidden bg-sand transition-transform duration-300 ease-out will-change-transform ${overlayClassName} ${className}`}
     >
       <div
         ref={imageRef}

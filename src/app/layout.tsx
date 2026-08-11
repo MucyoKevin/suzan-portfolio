@@ -9,6 +9,11 @@ const raleway = Raleway({
   display: "swap",
 });
 
+const ogImage = {
+  url: "/pic_2.jpeg",
+  alt: "Suzan Owembabazi, Marketing & Communications Specialist",
+};
+
 export const metadata: Metadata = {
   title: "Suzan Owembabazi — Marketing & Communications Portfolio",
   description:
@@ -19,6 +24,14 @@ export const metadata: Metadata = {
       "Creating meaningful connections between brands and their audiences through strategy, creativity, and impactful communication.",
     type: "website",
     locale: "en_US",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Suzan Owembabazi — Marketing & Communications Portfolio",
+    description:
+      "Creating meaningful connections between brands and their audiences through strategy, creativity, and impactful communication.",
+    images: [ogImage.url],
   },
 };
 

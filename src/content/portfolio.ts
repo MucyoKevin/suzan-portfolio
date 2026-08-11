@@ -75,7 +75,7 @@ export const caseStudies: CaseStudy[] = [
   {
     title: "Building Brand Presence Through Communications",
     organisation: "TMR International Hospital",
-    role: "Public Relations / Communications Officer",
+    role: "PR / Business development coordination",
     overview:
       "Supporting the hospital's communication strategy by creating engaging content, strengthening public relations, and enhancing brand visibility.",
     contributions: [
@@ -91,20 +91,6 @@ export const caseStudies: CaseStudy[] = [
       "Digital Communication",
       "Brand Management",
     ],
-  },
-  {
-    title: "Creating Awareness Through Strategic Communication",
-    organisation: "Ministry of Health Uganda",
-    role: "Public Relations Intern",
-    overview:
-      "Supported public communication efforts aimed at improving awareness and engagement.",
-    contributions: [
-      "Supported public awareness campaigns",
-      "Coordinated communication with media and stakeholders",
-      "Assisted in social media engagement",
-      "Contributed to public information initiatives",
-    ],
-    skills: ["Public Relations", "Media Relations", "Campaign Communication"],
   },
   {
     title: "Using Stories to Create Connection",
@@ -226,6 +212,8 @@ export const contact = {
   phoneHref: "tel:+256750728744",
   linkedin: "https://www.linkedin.com/in/suzan-owembabazi-a7ab07216/",
   linkedinLabel: "linkedin.com/in/suzan-owembabazi",
+  instagram: "https://www.instagram.com/iamsuzanne.o/",
+  instagramLabel: "instagram.com/iamsuzanne.o",
 } as const;
 
 export const navLinks = [

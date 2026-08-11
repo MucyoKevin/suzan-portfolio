@@ -27,7 +27,7 @@ export default function CreativeWork() {
               as="li"
               key={highlight.title}
               delay={(index % 3) * 90}
-              className="flex flex-col border border-sand-deep bg-cream p-8"
+              className="flex flex-col border border-sand-deep bg-cream p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-terracotta/50 hover:shadow-[0_20px_45px_-28px_rgba(28,25,23,0.35)]"
             >
               <h3 className="u-h3">{highlight.title}</h3>
               <dl className="mt-6 space-y-4">

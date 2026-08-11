@@ -22,12 +22,14 @@ export default function Expertise() {
               as="li"
               key={item.title}
               delay={(index % 3) * 90}
-              className="group border-b border-sand-deep py-8"
+              className="group border-b border-sand-deep py-8 transition-colors duration-300 hover:border-terracotta/60"
             >
-              <p className="u-eyebrow text-terracotta-deep/70">
+              <p className="u-eyebrow text-terracotta-deep/70 transition-colors duration-300 group-hover:text-terracotta-deep">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h3 className="u-h3 mt-4">{item.title}</h3>
+              <h3 className="u-h3 mt-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5">
+                {item.title}
+              </h3>
               <p className="u-body mt-3 text-base">{item.description}</p>
             </Reveal>
           ))}
