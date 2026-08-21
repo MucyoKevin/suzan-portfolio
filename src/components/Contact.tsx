@@ -38,7 +38,9 @@ export default function Contact() {
                 <a
                   href={contact.linkedin}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  // rel="me" mirrors the JSON-LD sameAs: it tells crawlers this
+                  // site and that profile are the same identity.
+                  rel="me noopener noreferrer"
                   className={detailLink}
                 >
                   {contact.linkedinLabel}
@@ -48,7 +50,7 @@ export default function Contact() {
                 <a
                   href={contact.instagram}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   className={detailLink}
                 >
                   {contact.instagramLabel}

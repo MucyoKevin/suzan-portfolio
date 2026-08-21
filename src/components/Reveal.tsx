@@ -7,7 +7,7 @@ type RevealProps = {
   /** Stagger in ms, written to --reveal-delay. */
   delay?: number;
   className?: string;
-  as?: "div" | "li" | "section" | "article" | "header";
+  as?: "div" | "li" | "section" | "article" | "header" | "span";
 };
 
 /**

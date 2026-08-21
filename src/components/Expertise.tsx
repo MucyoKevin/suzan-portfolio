@@ -6,6 +6,7 @@ export default function Expertise() {
   return (
     <section
       id="expertise"
+      aria-labelledby="expertise-heading"
       className="border-y border-sand-deep bg-sand py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
@@ -13,6 +14,7 @@ export default function Expertise() {
           index="02"
           eyebrow="Areas of Expertise"
           title="What I Do"
+          titleId="expertise-heading"
         />
 
         {/* Template 1's multi-column grid, separated by hairline rules. */}

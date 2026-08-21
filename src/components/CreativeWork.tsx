@@ -12,6 +12,7 @@ export default function CreativeWork() {
   return (
     <section
       id="creative"
+      aria-labelledby="creative-heading"
       className="border-y border-sand-deep bg-sand py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
@@ -19,6 +20,7 @@ export default function CreativeWork() {
           index="04"
           eyebrow="Digital & Creative Work"
           title="Content & Campaign Highlights"
+          titleId="creative-heading"
         />
 
         <ul className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

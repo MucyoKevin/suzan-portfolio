@@ -20,7 +20,11 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-cream py-24 md:py-32">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="bg-cream py-24 md:py-32"
+    >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <SectionHeading index="01" eyebrow={about.eyebrow} />
 
@@ -29,7 +33,7 @@ export default function About() {
           <Reveal className="mx-auto w-full max-w-xs md:sticky md:top-32 md:max-w-sm">
             <ParallaxFrame
               src="/pic_2.jpeg"
-              alt={`${profile.name} smiling to camera`}
+              alt={`Portrait of ${profile.name}, ${profile.title}`}
               strength={28}
               tilt
               sizes="(min-width: 768px) 32vw, 80vw"
@@ -39,7 +43,9 @@ export default function About() {
 
           <div>
             <Reveal delay={90}>
-              <h2 className="u-h2 max-w-2xl">{about.heading}</h2>
+              <h2 id="about-heading" className="u-h2 max-w-2xl">
+                {about.heading}
+              </h2>
             </Reveal>
 
             <div className="mt-8 space-y-6">

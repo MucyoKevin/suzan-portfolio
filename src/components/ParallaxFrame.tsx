@@ -9,7 +9,8 @@ type ParallaxFrameProps = {
   alt: string;
   /** Travel in px across a full viewport of scrolling. */
   strength?: number;
-  priority?: boolean;
+  /** Emits a <link rel="preload">. Only for an above-the-fold LCP candidate. */
+  preload?: boolean;
   sizes: string;
   /** Classes for the clipping frame (aspect ratio, radius, etc.). */
   className?: string;
@@ -28,7 +29,7 @@ export default function ParallaxFrame({
   src,
   alt,
   strength = 40,
-  priority = false,
+  preload = false,
   sizes,
   className = "",
   overlayClassName = "",
@@ -106,7 +107,7 @@ export default function ParallaxFrame({
           src={src}
           alt={alt}
           fill
-          priority={priority}
+          preload={preload}
           sizes={sizes}
           className="object-cover"
         />

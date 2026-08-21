@@ -5,6 +5,8 @@ type SectionHeadingProps = {
   index: string;
   eyebrow: string;
   title?: string;
+  /** Referenced by the parent section's aria-labelledby, naming the landmark. */
+  titleId?: string;
 };
 
 /**
@@ -14,6 +16,7 @@ export default function SectionHeading({
   index,
   eyebrow,
   title,
+  titleId,
 }: SectionHeadingProps) {
   return (
     <Reveal>
@@ -22,7 +25,11 @@ export default function SectionHeading({
         <span aria-hidden="true" className="h-px w-8 bg-terracotta/50" />
         <span>{eyebrow}</span>
       </p>
-      {title ? <h2 className="u-h2 mt-6 max-w-3xl">{title}</h2> : null}
+      {title ? (
+        <h2 id={titleId} className="u-h2 mt-6 max-w-3xl">
+          {title}
+        </h2>
+      ) : null}
     </Reveal>
   );
 }

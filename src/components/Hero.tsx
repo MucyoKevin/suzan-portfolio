@@ -4,16 +4,27 @@ import { profile } from "@/content/portfolio";
 
 export default function Hero() {
   return (
-    <section id="top" className="bg-cream pt-28 pb-14 md:pt-32 md:pb-16">
+    <section
+      id="top"
+      aria-labelledby="hero-heading"
+      className="bg-cream pt-28 pb-14 md:pt-32 md:pb-16"
+    >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <div className="max-w-2xl">
-          <Reveal>
-            <p className="u-eyebrow text-terracotta-deep">{profile.name}</p>
-          </Reveal>
-
-          <Reveal delay={90}>
-            <h1 className="u-display mt-6">{profile.portfolioTitle}</h1>
-          </Reveal>
+          {/*
+            The name sits inside the <h1> rather than in a <p> above it, so the
+            page's single top-level heading carries both the person and the
+            subject. Rendering is unchanged: the two lines keep their own type
+            styles and their own reveal timings.
+          */}
+          <h1 id="hero-heading">
+            <Reveal as="span" className="u-eyebrow block text-terracotta-deep">
+              {profile.name}
+            </Reveal>
+            <Reveal as="span" delay={90} className="u-display mt-6 block">
+              {profile.portfolioTitle}
+            </Reveal>
+          </h1>
 
           <Reveal delay={180}>
             <p className="u-body mt-8 max-w-xl">{profile.tagline}</p>

@@ -7,10 +7,16 @@ export default function Approach() {
   return (
     <section
       id="approach"
+      aria-labelledby="approach-heading"
       className="border-y border-sand-deep bg-sand py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
-        <SectionHeading index="06" eyebrow="My Approach" title="How I Work" />
+        <SectionHeading
+          index="06"
+          eyebrow="My Approach"
+          title="How I Work"
+          titleId="approach-heading"
+        />
 
         {/* Template 2's big numbered list */}
         <ol className="mt-16 border-t border-sand-deep">

@@ -4,12 +4,17 @@ import { events } from "@/content/portfolio";
 
 export default function Events() {
   return (
-    <section id="events" className="bg-cream py-24 md:py-32">
+    <section
+      id="events"
+      aria-labelledby="events-heading"
+      className="bg-cream py-24 md:py-32"
+    >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <SectionHeading
           index="05"
           eyebrow={events.eyebrow}
           title={events.heading}
+          titleId="events-heading"
         />
 
         {/* Template 3's card row */}

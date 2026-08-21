@@ -4,12 +4,17 @@ import { caseStudies } from "@/content/portfolio";
 
 export default function SelectedWork() {
   return (
-    <section id="work" className="bg-cream py-24 md:py-32">
+    <section
+      id="work"
+      aria-labelledby="work-heading"
+      className="bg-cream py-24 md:py-32"
+    >
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <SectionHeading
           index="03"
           eyebrow="Selected Work"
           title="Featured Work"
+          titleId="work-heading"
         />
 
         <div className="mt-16 space-y-20 md:space-y-28">
