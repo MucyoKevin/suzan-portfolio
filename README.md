@@ -1,6 +1,6 @@
 # Suzan Owembabazi — Portfolio
 
-A single-page marketing and communications portfolio, built with Next.js 16
+A single-page digital communications and brand portfolio, built with Next.js 16
 (App Router, Turbopack) and Tailwind CSS v4.
 
 ## Getting started

@@ -33,7 +33,7 @@ export const siteName = `${profile.name} — ${profile.portfolioTitle}`;
 export const siteTitle = `${profile.name} — ${profile.portfolioTitle}`;
 
 /** ~150 chars: long enough to be descriptive, short enough to survive the SERP. */
-export const siteDescription = `${profile.name} is a marketing and communications specialist in ${profile.location} — brand storytelling, PR, digital marketing, and event experiences.`;
+export const siteDescription = `${profile.name} is a digital communications and brand professional in ${profile.location} — digital marketing, graphic design, brand storytelling, and PR.`;
 
 /**
  * Not a Google ranking signal, but still read by Bing, Yandex, and a number of
@@ -44,8 +44,10 @@ export const siteKeywords = [
   profile.title,
   ...profile.pillars,
   ...expertise.map((item) => item.title),
-  "Marketing Specialist Uganda",
-  "Communications Specialist Kampala",
+  "Digital Communications Professional Uganda",
+  "Brand Professional Kampala",
+  "Digital Marketing Uganda",
+  "Graphic Designer Kampala",
   "Brand Communications Portfolio",
   "PR Consultant Uganda",
 ];

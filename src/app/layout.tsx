@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
   publisher: profile.name,
-  category: "Marketing & Communications",
+  category: "Digital Communications & Branding",
   // Points crawlers at the single canonical URL, so a preview host, a trailing
   // slash, or a ?utm_source link never registers as duplicate content.
   alternates: {

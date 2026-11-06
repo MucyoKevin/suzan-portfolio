@@ -5,8 +5,8 @@
 
 export const profile = {
   name: "Suzan Owembabazi",
-  title: "Marketing & Communications Specialist",
-  portfolioTitle: "Marketing & Communications Portfolio",
+  title: "Digital Communications & Brand Professional",
+  portfolioTitle: "Digital Communications & Brand Portfolio",
   pillars: [
     "Brand Storytelling",
     "Public Relations",
@@ -22,9 +22,9 @@ export const about = {
   eyebrow: "About Me",
   heading: "Building strong brands through strategic storytelling.",
   paragraphs: [
-    "I am a Marketing and Communications professional passionate about building strong brands through strategic storytelling, digital communication, and audience-focused experiences.",
+    "I am a Digital Communications & Brand Professional passionate about building strong brands through strategic storytelling, digital communication, and audience-focused experiences.",
     "My work combines creativity and strategy to transform brand messages into engaging experiences that improve visibility, strengthen relationships, and create lasting impressions.",
-    "I specialize in developing communication strategies, creating compelling content, managing brand reputation, and delivering campaigns that connect organizations with their audiences.",
+    "I specialize in digital marketing, graphic design, social media management, content creation, and developing communication strategies — managing brand reputation and delivering campaigns that connect organizations with their audiences.",
   ],
 } as const;
 
