@@ -3,6 +3,7 @@ import Approach from "@/components/Approach";
 import Contact from "@/components/Contact";
 import CreativeWork from "@/components/CreativeWork";
 import Events from "@/components/Events";
+import Experience from "@/components/Experience";
 import Expertise from "@/components/Expertise";
 import Hero from "@/components/Hero";
 import SelectedWork from "@/components/SelectedWork";
@@ -38,6 +39,7 @@ export default function Home() {
         <CreativeWork />
         <Events />
         <Approach />
+        <Experience />
       </main>
 
       <Contact />

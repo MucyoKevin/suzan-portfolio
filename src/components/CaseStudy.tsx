@@ -7,77 +7,70 @@ type CaseStudyProps = {
 };
 
 /**
- * Template 3's two-column featured-work block. With no project imagery yet,
- * the visual half is a typographic panel carrying the chapter numeral — swap
- * it for a <ParallaxFrame> once screenshots exist.
+ * Editorial featured-work block: a sticky meta column (numeral, organisation,
+ * role, skills) beside the story itself. Built from the copy alone, so it
+ * reads complete without project imagery.
  */
 export default function CaseStudy({ study, index }: CaseStudyProps) {
   const numeral = String(index + 1).padStart(2, "0");
-  const flipped = index % 2 === 1;
 
   return (
-    <article className="grid gap-10 border-t border-sand-deep pt-12 md:grid-cols-2 md:gap-16">
-      <Reveal
-        className={`relative flex min-h-64 flex-col justify-between overflow-hidden bg-sand p-8 md:min-h-[22rem] ${
-          flipped ? "md:order-2" : ""
-        }`}
-      >
-        <span
+    <article className="grid gap-10 border-t border-sand-deep pt-12 md:grid-cols-[1fr_2fr] md:gap-16">
+      <Reveal className="md:sticky md:top-32 md:self-start">
+        <p
           aria-hidden="true"
-          className="absolute -right-4 -bottom-10 text-[10rem] leading-none font-light text-sand-deep select-none md:text-[14rem]"
+          className="text-7xl leading-none font-light text-terracotta md:text-8xl"
         >
           {numeral}
-        </span>
-        <p className="u-eyebrow relative text-terracotta-deep">
-          Project {numeral}
         </p>
-        <p className="relative mt-8 max-w-xs text-2xl leading-snug font-light text-ink md:text-3xl">
+        <p className="mt-8 text-2xl leading-snug font-light text-ink md:text-3xl">
           {study.organisation}
         </p>
+        {study.role ? (
+          <p className="mt-2 text-sm text-ink-soft">{study.role}</p>
+        ) : null}
+
+        <ul
+          aria-label="Skills applied"
+          className="mt-8 flex flex-wrap gap-2"
+        >
+          {study.skills.map((skill) => (
+            <li
+              key={skill}
+              className="border border-terracotta/40 px-3 py-1.5 text-xs tracking-wide text-ink"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
       </Reveal>
 
-      <Reveal delay={120} className={flipped ? "md:order-1" : ""}>
-        <h3 className="u-h2 text-[clamp(1.5rem,2.6vw,2.125rem)]">
+      <Reveal delay={120}>
+        <h3 className="u-h2 text-[clamp(1.75rem,3.2vw,2.75rem)]">
           {study.title}
         </h3>
 
-        <p className="u-eyebrow mt-4 text-ink">{study.organisation}</p>
-        {study.role ? (
-          <p className="mt-2 text-sm text-ink-soft">Role: {study.role}</p>
-        ) : null}
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed font-light text-ink md:text-xl">
+          {study.overview}
+        </p>
 
-        <div className="mt-8">
-          <p className="u-eyebrow text-terracotta-deep">Overview</p>
-          <p className="u-body mt-3">{study.overview}</p>
-        </div>
-
-        <div className="mt-8">
-          <p className="u-eyebrow text-terracotta-deep">My Contribution</p>
-          <ul className="mt-3 space-y-2.5">
-            {study.contributions.map((contribution) => (
-              <li
-                key={contribution}
-                className="u-body relative pl-6 text-base before:absolute before:top-[0.7em] before:left-0 before:h-px before:w-3 before:bg-terracotta"
+        <p className="u-eyebrow mt-12 text-terracotta-deep">My Contribution</p>
+        <ol className="mt-6 grid gap-x-10 sm:grid-cols-2">
+          {study.contributions.map((contribution, itemIndex) => (
+            <li
+              key={contribution}
+              className="flex gap-4 border-t border-sand-deep py-5"
+            >
+              <span
+                aria-hidden="true"
+                className="u-eyebrow pt-1 text-terracotta-deep/70"
               >
-                {contribution}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-8">
-          <p className="u-eyebrow text-terracotta-deep">Skills Applied</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {study.skills.map((skill) => (
-              <li
-                key={skill}
-                className="border border-terracotta/40 px-3 py-1.5 text-xs tracking-wide text-ink"
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
+                {String(itemIndex + 1).padStart(2, "0")}
+              </span>
+              <span className="u-body text-base">{contribution}</span>
+            </li>
+          ))}
+        </ol>
       </Reveal>
     </article>
   );

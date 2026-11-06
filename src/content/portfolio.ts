@@ -14,6 +14,7 @@ export const profile = {
     "Experience Design",
   ],
   location: "Kampala, Uganda",
+  relocation: "Open to relocating to Kigali, Rwanda",
   tagline:
     "Creating meaningful connections between brands and their audiences through strategy, creativity, and impactful communication.",
 } as const;
@@ -41,7 +42,7 @@ export const expertise: Expertise[] = [
   {
     title: "Public Relations & Reputation Management",
     description:
-      "Building trust, managing communication, and strengthening brand perception.",
+      "Building trust, handling crisis communication, and strengthening brand perception.",
   },
   {
     title: "Digital Marketing & Social Media",
@@ -49,8 +50,9 @@ export const expertise: Expertise[] = [
       "Creating content strategies that increase engagement and visibility.",
   },
   {
-    title: "Content Creation",
-    description: "Developing creative, audience-focused communication.",
+    title: "Copywriting & Content Creation",
+    description:
+      "Writing and developing creative, audience-focused communication.",
   },
   {
     title: "Events & Activations",
@@ -58,7 +60,8 @@ export const expertise: Expertise[] = [
   },
   {
     title: "Stakeholder Engagement",
-    description: "Building partnerships and maintaining valuable relationships.",
+    description:
+      "Building partnerships and maintaining valuable relationships.",
   },
 ];
 
@@ -73,35 +76,51 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    title: "Building Brand Presence Through Communications",
-    organisation: "TMR International Hospital",
-    role: "PR / Business development coordination",
+    title: "Shaping a Brand for Market Launch",
+    organisation: "GC Builds",
+    role: "Brand Manager (short-term contract)",
     overview:
-      "Supporting the hospital's communication strategy by creating engaging content, strengthening public relations, and enhancing brand visibility.",
+      "Led brand development for a platform serving developers, contractors, real estate agents, and property managers, working with a seven-member team across East Africa to define how the brand looks, sounds, and introduces itself.",
     contributions: [
-      "Managed communication initiatives supporting institutional goals",
-      "Created digital content to improve audience engagement",
-      "Supported brand messaging and reputation management",
-      "Coordinated stakeholder communication",
-      "Responded to public and client inquiries",
+      "Refined the brand strategy, positioning, and market identity",
+      "Sharpened messaging to communicate the platform's value to each audience",
+      "Oversaw brand identity guidelines, including logo refinement, visual direction, and the second version of the brand book",
+      "Wrote the brand narratives and the founder's launch story",
+      "Supported launch communications, marketing collateral, and go-to-market planning",
     ],
     skills: [
-      "PR",
-      "Content Strategy",
-      "Digital Communication",
-      "Brand Management",
+      "Brand Strategy",
+      "Brand Identity",
+      "Messaging",
+      "Launch Communications",
     ],
   },
   {
+    title: "Building Brand Presence Through Communications",
+    organisation: "TMR International Hospital",
+    role: "Public Relations / Communication Officer",
+    overview:
+      "Managed the hospital's social media presence and digital campaigns, strengthening public relations and institutional visibility.",
+    contributions: [
+      "Planned, created, and published social media content and managed audience engagement",
+      "Developed digital and promotional campaigns to raise public awareness",
+      "Kept brand messaging consistent across digital and public-facing channels",
+      "Supported stakeholder relations, media engagement, and event communications",
+      "Contributed to reputation management and crisis communication",
+    ],
+    skills: ["PR", "Social Media", "Digital Campaigns", "Crisis Communication"],
+  },
+  {
     title: "Using Stories to Create Connection",
-    organisation: "Future for Orphans Uganda",
+    organisation: "A Future for Orphans Uganda",
+    role: "Public Relations Intern",
     overview:
       "Created communication that highlighted community impact and connected audiences with meaningful stories.",
     contributions: [
       "Developed human-interest content",
       "Managed social media platforms",
-      "Supported promotional campaigns",
-      "Captured stories that reflected community impact",
+      "Supported promotional campaigns and public engagement events",
+      "Researched public opinion and communication trends to guide content",
     ],
     skills: ["Storytelling", "Social Media", "Community Engagement"],
   },
@@ -163,8 +182,7 @@ export const events = {
     },
     {
       title: "Guest Engagement",
-      description:
-        "Designing the moments that turn attendees into advocates.",
+      description: "Designing the moments that turn attendees into advocates.",
     },
     {
       title: "Brand Activations",
@@ -205,6 +223,108 @@ export const approach: ApproachStep[] = [
   },
 ];
 
+export type Role = {
+  role: string;
+  organisation: string;
+  location: string;
+  period: string;
+  highlights: string[];
+};
+
+export const experience: Role[] = [
+  {
+    role: "Brand Manager (Short-term Contract)",
+    organisation: "GC Builds",
+    location: "Nairobi, Kenya (Remote)",
+    period: "Apr 2026 – Jun 2026",
+    highlights: [
+      "Coordinated brand development with a seven-member, cross-country team.",
+      "Oversaw brand identity guidelines and the second version of the brand book.",
+      "Developed brand narratives, the founder's launch story, and go-to-market communication.",
+    ],
+  },
+  {
+    role: "Community Engagement Lead",
+    organisation: "Excel Hort Agribusiness Incubator Limited (EHCAI)",
+    location: "Kiryandongo, Uganda",
+    period: "Nov 2025 – Nov 2026",
+    highlights: [
+      "Coordinated engagement with community stakeholders and institutional partners.",
+      "Facilitated stakeholder meetings, community consultations, and sensitisation activities.",
+      "Documented community feedback to inform project coordination.",
+    ],
+  },
+  {
+    role: "Public Relations / Communication Officer",
+    organisation: "TMR International Hospital",
+    location: "Kampala, Uganda",
+    period: "Jan 2024 – Nov 2025",
+    highlights: [
+      "Managed the hospital's social media presence, from planning to publishing and engagement.",
+      "Developed digital and promotional campaigns to strengthen institutional visibility.",
+      "Supported media engagement, event communications, and crisis communication.",
+    ],
+  },
+  {
+    role: "Public Relations Intern",
+    organisation: "Ministry of Health, Uganda",
+    location: "Uganda",
+    period: "2023 – 2024",
+    highlights: [
+      "Supported social media management, public engagement, and responses to inquiries.",
+      "Contributed to public awareness campaigns and communication materials.",
+      "Coordinated with media houses, NGOs, and government stakeholders.",
+    ],
+  },
+  {
+    role: "Public Relations Intern",
+    organisation: "A Future for Orphans Uganda",
+    location: "Uganda",
+    period: "2022",
+    highlights: [
+      "Managed social media and created stories highlighting community impact.",
+      "Researched public opinion and communication trends to inform content.",
+    ],
+  },
+  {
+    role: "Sales and Marketing",
+    organisation: "Wandaz Products Limited",
+    location: "Uganda",
+    period: "2021",
+    highlights: [
+      "Supported product marketing and promotional campaigns.",
+      "Conducted market research on customer needs and competitor activity.",
+    ],
+  },
+  {
+    role: "Sales and Branding",
+    organisation: "Makerere University Souvenir Shop",
+    location: "Kampala, Uganda",
+    period: "2019",
+    highlights: [
+      "Supported merchandising, brand presentation, and promotion of university merchandise.",
+    ],
+  },
+];
+
+export const education = {
+  degree: "Bachelor of Journalism and Communication",
+  institution: "Makerere University",
+  period: "2019 – 2024",
+} as const;
+
+export const certifications = [
+  { name: "Certificate in Brand Development", issuer: "Alison", year: "2023" },
+] as const;
+
+export const languages = [
+  { name: "English", code: "en" },
+  { name: "Kinyarwanda", code: "rw" },
+  { name: "Swahili", code: "sw" },
+  { name: "Luganda", code: "lg" },
+  { name: "Runyankole", code: "rl" },
+] as const;
+
 export const contact = {
   heading: "Let's Connect",
   email: "suzanowembabazi2@gmail.com",
@@ -221,5 +341,6 @@ export const navLinks = [
   { href: "#expertise", label: "Expertise" },
   { href: "#work", label: "Work" },
   { href: "#approach", label: "Approach" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ] as const;

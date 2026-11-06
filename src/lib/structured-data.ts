@@ -1,8 +1,11 @@
 import {
   about,
   caseStudies,
+  certifications,
   contact,
+  education,
   expertise,
+  languages,
   profile,
 } from "@/content/portfolio";
 import {
@@ -61,7 +64,32 @@ export function buildStructuredData() {
           ...profile.pillars,
           ...expertise.map((item) => item.title),
         ],
-        knowsLanguage: ["en"],
+        knowsLanguage: languages.map((language) => ({
+          "@type": "Language",
+          name: language.name,
+          alternateName: language.code,
+        })),
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: education.institution,
+        },
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: education.degree,
+            credentialCategory: "degree",
+            recognizedBy: {
+              "@type": "CollegeOrUniversity",
+              name: education.institution,
+            },
+          },
+          ...certifications.map((cert) => ({
+            "@type": "EducationalOccupationalCredential",
+            name: cert.name,
+            credentialCategory: "certificate",
+            recognizedBy: { "@type": "Organization", name: cert.issuer },
+          })),
+        ],
         // `sameAs` is how search engines tie this page to the same identity
         // elsewhere; it is the strongest entity signal a personal site has.
         sameAs: [contact.linkedin, contact.instagram],

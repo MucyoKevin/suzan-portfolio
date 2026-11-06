@@ -10,7 +10,7 @@ export default function Contact() {
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <Reveal>
           <p className="u-eyebrow flex items-center gap-3 text-terracotta-deep">
-            <span>07</span>
+            <span>08</span>
             <span aria-hidden="true" className="h-px w-8 bg-terracotta/50" />
             <span>Contact</span>
           </p>
@@ -81,7 +81,9 @@ export default function Contact() {
           <p>
             &copy; {new Date().getFullYear()} {profile.name}
           </p>
-          <p>{profile.location}</p>
+          <p>
+            {profile.location} · {profile.relocation}
+          </p>
         </div>
       </div>
     </footer>
